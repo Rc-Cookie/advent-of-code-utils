@@ -27,8 +27,8 @@ public class DayGenerator {
             File dir = new File("day" + day + "");
             if(!dir.exists()) dir.mkdir();
 
-            File inputFile = new File("input/day" + day + ".input");
-            if(!inputFile.exists() || (Files.readString(Path.of("input/day" + day + ".input")).startsWith("Please don't") || Files.readString(Path.of("input/day" + day + ".input")).startsWith("Input not available"))) {
+            File inputFile = new File("recources/input/day" + day + ".input");
+            if(!inputFile.exists() || (Files.readString(Path.of("recources/input/day" + day + ".input")).startsWith("Please don't") || Files.readString(Path.of("recources/input/day" + day + ".input")).startsWith("Input not available"))) {
                 Formatter f = new Formatter(inputFile);
                 f.format(getInput(day));
                 f.close();
@@ -50,7 +50,7 @@ public class DayGenerator {
 
             String desc1 = getFirstDescription(day), desc2 = getSecondDescription(day);
             Formatter f = new Formatter(file);
-            f.format(Files.readString(Path.of("data/Day.template")), day, desc1, desc2, PREFAB_CODE);
+            f.format(Files.readString(Path.of("recources/data/Day.template")), day, desc1, desc2, PREFAB_CODE);
 
             f.close();
             return true;

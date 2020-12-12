@@ -1,0 +1,32 @@
+package day%d;
+
+import com.github.rccookie.common.util.Console;
+
+public class Day extends util.Day {
+
+    private final String[] input;
+
+    {
+        input = inputInLines();
+    }
+
+    /**
+     * %s
+     * <p>This method will return the result for the personal input.
+     */
+    @Override
+    public long resultPart1() throws Exception {
+        Console.map("Input", input);
+        return -1;
+    }
+
+    /**
+     * %s
+     * <p>This method will return the result for the personal input.
+     */
+    @Override
+    public long resultPart2() throws Exception {
+        %s
+        return -1;
+    }
+}

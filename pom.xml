@@ -6,7 +6,7 @@
 
   <groupId>com.github.rccookie</groupId>
   <artifactId>advent-of-code-utils</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 
   <name>advent-of-code-utils</name>
   <!-- FIXME change it to the project's website -->

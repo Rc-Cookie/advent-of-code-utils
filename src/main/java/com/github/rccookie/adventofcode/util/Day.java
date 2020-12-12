@@ -18,7 +18,7 @@ public abstract class Day {
 
     protected String input() {
         try {
-            return readString(Path.of("input/day" + getDay() + ".input"), US_ASCII);
+            return readString(Path.of("recources/input/day" + getDay() + ".input"), US_ASCII);
         } catch(Exception e) {
             throw new RuntimeException(e);
         }
@@ -44,7 +44,7 @@ public abstract class Day {
 
     protected Scanner inputScanner() {
         try {
-            return new Scanner(new File("input/day" + getDay() + ".input"));
+            return new Scanner(new File("recources/input/day" + getDay() + ".input"));
         } catch(Exception e) {
             throw new RuntimeException(e);
         }
