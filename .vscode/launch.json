@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DayGenerator",
+            "request": "launch",
+            "mainClass": "com.github.rccookie.adventofcode.util.DayGenerator",
+            "projectName": "advent-of-code-utils"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Run Launcher",
+            "request": "launch",
+            "mainClass": "com.github.rccookie.adventofcode.util.Launcher",
+            "projectName": "advent-of-code-utils"
+        }
+    ]
+}

@@ -18,7 +18,7 @@ public abstract class Day {
 
     protected String input() {
         try {
-            return readString(Path.of("recources/input/day" + getDay() + ".input"), US_ASCII);
+            return readString(Path.of("recources/input/" + DayGenerator.packageUsername + "/year" + getYear() + "/day" + getDay() + ".input"), US_ASCII);
         } catch(Exception e) {
             throw new RuntimeException(e);
         }
@@ -44,7 +44,7 @@ public abstract class Day {
 
     protected Scanner inputScanner() {
         try {
-            return new Scanner(new File("recources/input/day" + getDay() + ".input"));
+            return new Scanner(new File("recources/input/" + DayGenerator.packageUsername + "/year" + getYear() + "/day" + getDay() + ".input"));
         } catch(Exception e) {
             throw new RuntimeException(e);
         }
@@ -52,10 +52,17 @@ public abstract class Day {
 
     public int getDay() {
         String name = getClass().getName();
+        name = name.substring(name.indexOf('.') + 1).substring(name.indexOf('.') + 1);
         return Integer.parseInt(name.substring(3, name.indexOf(".")));
     }
 
-    public class NotImplementedException extends Exception {
+    public int getYear() {
+        String name = getClass().getName();
+        name = name.substring(name.indexOf('.') + 1);
+        return Integer.parseInt(name.substring(4, name.indexOf(".")));
+    }
+
+    class NotImplementedException extends Exception {
         private static final long serialVersionUID = -4881948333783821683L;
     }
 }
