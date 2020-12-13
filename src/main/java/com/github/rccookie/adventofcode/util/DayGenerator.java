@@ -14,7 +14,6 @@ import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
@@ -25,7 +24,7 @@ class DayGenerator {
     static String username, packageUsername, password;
     static boolean loggedIn = false;
     static final Scanner inScanner = new Scanner(System.in);
-    static final HtmlUnitDriver driver = new HtmlUnitDriver();
+    static HtmlUnitDriver driver = new HtmlUnitDriver();
     static {
         java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
     }
@@ -257,13 +256,9 @@ class DayGenerator {
 
         Console.log("Downloading description part 1 for day " + day + "...");
 
-        // Disable CSS error logging
-        java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
-
-        WebDriver driver = new HtmlUnitDriver();
         try {
             // Go to day page
-            driver.get("https://adventofcode.com/2020/day/" + day);
+            driver.get("https://adventofcode.com/" + year + "/day/" + day);
             String out = driver.findElements(By.className("day-desc")).get(0).getAttribute("innerHTML");
 
             Console.log("Successfully downloaded description part 1 for day " + day);
@@ -278,8 +273,6 @@ class DayGenerator {
             e.printStackTrace();
             Console.log("Failed to download description part 1");
             System.out.println(); // To seperate from other logging
-        } finally {
-            driver.close();
         }
         return Prefabs.DESC_1;
     }
@@ -292,15 +285,11 @@ class DayGenerator {
 
         Console.log("Downloading description part 2 for day " + day + "...");
 
-        // Disable CSS error logging
-        java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
-
-        WebDriver driver = new HtmlUnitDriver();
         try {
             ensureLoggedIn();
 
             // Go to day page
-            driver.get("https://adventofcode.com/2020/day/" + day);
+            driver.get("https://adventofcode.com/" + year + "/day/" + day);
             String out = driver.findElements(By.className("day-desc")).get(1).getAttribute("innerHTML");
 
             Console.log("Successfully downloaded description part 2 for day " + day);
@@ -312,15 +301,18 @@ class DayGenerator {
             Console.log("Description part 2 is not avalialble yet (you propably haven't completed part 1)");
             System.out.println(); // To seperate from other logging
         } catch(IndexOutOfBoundsException e) {
-            Console.log("Description part 2 is not avalialble yet");
+            Console.log("Description part 2 is not avalialble yet (you propably haven't completed part 1)");
             System.out.println(); // To seperate from other logging
         } catch(Exception e) {
             e.printStackTrace();
             Console.log("Failed to download description part 2");
             System.out.println(); // To seperate from other logging
-        } finally {
-            driver.close();
         }
         return Prefabs.DESC_2;
+    }
+
+
+    public static void main(String[] args) {
+        new DayGenerator(12, 2020).generateNeccecaryFiles();
     }
 }

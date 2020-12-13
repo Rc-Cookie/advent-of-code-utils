@@ -6,6 +6,8 @@ import java.util.Calendar;
 import com.github.rccookie.adventofcode.util.Day.NotImplementedException;
 import com.github.rccookie.common.util.Console;
 
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
 public class Launcher {
 
     /**
@@ -57,6 +59,7 @@ public class Launcher {
     public static void run(String[] args) {
         try {
             DayGenerator.password = null;
+            DayGenerator.driver = new HtmlUnitDriver();
             int day = DAY_OVERRIDE != null ? DAY_OVERRIDE : Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
             int year = YEAR_OVERRIDE != null ? YEAR_OVERRIDE : Calendar.getInstance().get(Calendar.YEAR);
             if(args != null && args.length > 0) day = Integer.parseInt(args[0]);
