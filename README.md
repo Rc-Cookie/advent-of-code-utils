@@ -13,6 +13,8 @@ This package contains some classes for Advent of code that are mainly used to ge
 
 Simply reference this package in your project as explained on the 'Packages' tab. Alternatively, you can download the latest ``...-jar-with-dependencies.jar`` file and reference it directly.
 
-By default, the generator will threat the top directory of the project as the default package. If you are using Maven or similar and the default package is in a subdirectory, you can specify that using ``Launcher.FILE_ROOT``. For example, for a maven project set it to ``"src/main/java/"``. Not the '/' at the end.
+To run this, simply call ``Launcher.run()``.
+
+By default, the generator will threat the top directory of the project as the default package. If you are using Maven or similar and the default package is in a subdirectory, you can specify that using ``Launcher.FILE_ROOT``. For example, for a maven project set it to ``"src/main/java/"``. Note the '/' at the end which is neccecary.
 
 To recieve the personal input and to access the description of the second part of the task, a login is neccecary. Therefore, the program will ask you for username and password of your GitHub accout. The username if stored in ``recources/data/login.login``. The password will not be saved by default and you will have to enter it whenever neccecary. If you do want your passport to be saved, you can set ``Launcher.SAVE_PASSWORD`` to ``true``. However, **make sure to add the ``login.login`` file to your ``.gitignore``, or your password will be uploaded!**
