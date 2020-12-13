@@ -26,6 +26,9 @@ class DayGenerator {
     static boolean loggedIn = false;
     static final Scanner inScanner = new Scanner(System.in);
     static final HtmlUnitDriver driver = new HtmlUnitDriver();
+    static {
+        java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
+    }
 
 
     private final int day, year;
