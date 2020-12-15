@@ -6,7 +6,7 @@
 
   <groupId>com.github.rccookie</groupId>
   <artifactId>advent-of-code-utils</artifactId>
-  <version>0.2.3</version>
+  <version>0.2.3.1</version>
 
   <name>advent-of-code-utils</name>
   <!-- FIXME change it to the project's website -->
@@ -27,7 +27,7 @@
     <dependency>
       <groupId>com.github.rccookie</groupId>
       <artifactId>rccookie-common</artifactId>
-      <version>0.1.2</version>
+      <version>0.1.2.3</version>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>

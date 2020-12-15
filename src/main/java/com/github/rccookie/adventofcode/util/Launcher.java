@@ -57,6 +57,7 @@ public class Launcher {
     public static void run() { run(new String[0]); }
 
     public static void run(String[] args) {
+        Console.clear();
         try {
             DayGenerator.password = null;
             DayGenerator.driver = new HtmlUnitDriver();
